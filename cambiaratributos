@@ -1,0 +1,14 @@
+game.Workspace.cubo1.Transparency = 0.5
+game.Workspace.cubo1.BrickColor = BrickColor.new("Hot pink")
+game.Workspace.cubo1.Anchored = true
+
+cohete = 10
+astronauta = 30
+if cohete + astronauta == 40 then
+	game.Workspace.cubo2.BrickColor = BrickColor.Blue()
+	game.Workspace.cubo2.Material = Enum.Material.Brick
+end
+
+if cohete + astronauta == 40 then
+	
+end
