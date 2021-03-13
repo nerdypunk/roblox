@@ -1,0 +1,9 @@
+local rs = game:GetService("ReplicatedStorage")
+local re = rs:WaitForChild("MoveRe")
+
+local function movePart(player, part, pos, ori)
+	part.Position = pos
+	part.Orientation = ori
+end
+
+re.OnServerEvent:Connect(movePart)
