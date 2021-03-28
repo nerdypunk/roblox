@@ -1,0 +1,19 @@
+local rs = game:GetService("ReplicatedStorage")
+local re = rs:WaitForChild("BuildRe")
+local ss = game:GetService("ServerStorage")
+local wPart = ss:WaitForChild("Wall")
+
+local function buildIt(player, buildName, iPos, dPos)
+	if buildName == "Wall" then
+		local ht = player.Character.HumanoidRootPart.CFrame.Position.Y + 1
+		local dPos = Vector3.new(dPos.X, ht, dPos.Z)
+		local iPos = Vector3.new(iPos.X, ht, iPos.Z)
+		local diff = (dPos - iPos).Unit * 25
+		local cf = CFrame.new(iPos, dPos) + diff
+		local part = wPart:Clone()
+		part.Parent = workspace
+		part.CFrame = cf
+		part.Moveable.Value = player.Name
+	end
+end
+re.OnServerEvent:Connect(buildIt)
