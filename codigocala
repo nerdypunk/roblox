@@ -1,8 +1,0 @@
-local part = Instance.new("Part")
-part.Name = "MiCubo"
-part.BrickColor = BrickColor.new("Baby blue")
-part.Anchored = false
-part.Position = Vector3.new(0,20,0)
-part.Transparency = 0.5
-part.CanCollide = true
-part.Parent = workspace
