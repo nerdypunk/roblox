@@ -1,5 +1,4 @@
 local part = script.Parent.Part
-local led = script.Parent.LED
 
 local function onTouch(otherPart)
 	local hum = otherPart.Parent:FindFirstChild("Humanoid")
@@ -10,7 +9,6 @@ local function onTouch(otherPart)
 		boom.BlastRadius = 40
 		wait(2)
 		part:Destroy()
-		led:Destroy()
 	end
 end
 
