@@ -1,0 +1,19 @@
+local part = script.Parent.Part
+local led = script.Parent.LED
+
+local function onTouch(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		local boom = Instance.new("Explosion", part)
+		boom.Position = part.Position
+		boom.BlastPressure = 50000
+		boom.BlastRadius = 40
+		wait(2)
+		part:Destroy()
+		led:Destroy()
+	end
+end
+
+
+
+part.Touched:Connect(onTouch)
