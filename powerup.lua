@@ -5,12 +5,10 @@ local function onEat(otherPart)
 	local hum = otherPart.Parent:FindFirstChild("Humanoid")
 	if hum and canTouch then
 		canTouch = false
-		hum.WalkSpeed = 50
-		hum.JumpPower = 300
+		hum.JumpPower = 100
 		part.Transparency = 1
 		wait(10)
 		canTouch = true
-		hum.WalkSpeed = 16
 		hum.JumpPower = 50
 		part.Transparency = 0
 	end
