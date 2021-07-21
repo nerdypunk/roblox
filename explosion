@@ -1,4 +1,4 @@
-local part = script.Parent.Part
+local part = script.Parent
 
 local function onTouch(otherPart)
 	local hum = otherPart.Parent:FindFirstChild("Humanoid")
