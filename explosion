@@ -3,10 +3,12 @@ local part = script.Parent.Part
 local function onTouch(otherPart)
 	local hum = otherPart.Parent:FindFirstChild("Humanoid")
 	if hum then
+		part.BrickColor = BrickColor.new("Bright red")
+		wait(5)
 		local boom = Instance.new("Explosion", part)
 		boom.Position = part.Position
-		boom.BlastPressure = 50000
-		boom.BlastRadius = 40
+		boom.BlastPressure = 100
+		boom.BlastRadius = 10
 		wait(2)
 		part:Destroy()
 	end
