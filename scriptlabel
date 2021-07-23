@@ -1,0 +1,19 @@
+local frm = script.Parent
+local btn = script.Parent.CloseBtn
+local lbl = script.Parent.MsgLbl
+local rs = game:GetService("ReplicatedStorage")
+local re = rs:WaitForChild("GiveMsgRe")
+
+frm.Visible = false
+local function closeFrm()
+	frm.Visible = false
+
+end
+
+local function displayMsg(msg)
+	frm.Visible = true
+	lbl.Text = msg
+end
+
+btn.Activated:Connect(closeFrm)
+re.OnClientEvent:Connect(displayMsg)
