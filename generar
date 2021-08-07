@@ -1,0 +1,9 @@
+local ss = game:GetService("ServerStorage")
+
+local zombie = ss.WaitForChild("Zombie")
+
+while true do
+	zombie.Position = Vector3.new(-38, 38.996, 174)
+	zombie.Parent = workspace
+	wait(10)
+end
