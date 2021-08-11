@@ -1,0 +1,12 @@
+local ss = game:GetService("ServerStorage")
+local cilindro = ss:WaitForChild("cilindro")
+
+function sacarcilindro()
+	cilindro.Position = Vector3.new(276.511, 127.361, -79.48)
+	cilindro.Parent = workspace
+end
+
+while true do
+	sacarcilindro()
+	wait(5)
+end
