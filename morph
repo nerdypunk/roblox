@@ -1,0 +1,23 @@
+local part = script.Parent
+local ss = game:GetService("ServerStorage")
+local carrot = ss:WaitForChild("Carrot")
+
+local function onMorph(otherPart)
+	local hrp = otherPart.Parent:FindFirstChild("HumanoidRootPart")
+	
+	if hrp then
+		local player = game.Players:GetPlayerFromCharacter(otherPart.Parent)
+		local morphed = hrp:FindFirstChild("Morphed")
+		if player and not morphed then
+			local carrotClone = carrot:Clone()
+			carrotClone.Name = player.Name
+			player.Character = carrotClone
+			local carrotRootPart = carrotClone:WaitForChild("HumanoidRootPart")
+			carrotRootPart.CFrame = hrp.CFrame
+			carrotClone.Parent = workspace
+		end
+		
+	end
+end
+
+part.Touched:Connect(onMorph)
