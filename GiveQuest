@@ -1,0 +1,13 @@
+local part = script.Parent
+local rs = game:GetService("ReplicatedStorage")
+local re = rs:WaitForChild("GiveMsgRe")
+
+local function onTouch(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		local player = game.Players:GetPlayerFromCharacter(otherPart.Parent)
+		re:FireClient(player, "Hola mundo, este es un mensaje")
+	end
+end
+
+part.Touched:Connect(onTouch)
