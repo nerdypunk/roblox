@@ -393,7 +393,7 @@ function WeaponsSystem.setWeaponEquipped(weapon, equipped)
 
 	if WeaponsSystem.gui then
 		WeaponsSystem.gui:setEnabled(hasWeapon)
-
+		WeaponsSystem.camera:setEnabled(hasWeapon)
 		if WeaponsSystem.currentWeapon then
 			WeaponsSystem.gui:setCrosshairWeaponScale(WeaponsSystem.currentWeapon:getConfigValue("CrosshairScale", 1))
 		else
