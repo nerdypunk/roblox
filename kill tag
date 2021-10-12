@@ -1,0 +1,14 @@
+local Character = script.Parent
+local hum = Character:WaitForChild("Humanoid")
+local canDie = true
+
+hum.Died:Connect(function() 
+	print("zombie died")
+	local tag = hum:FindFirstChild("creator")
+	if tag and canDie then
+		canDie = false
+		local ePlayer = tag.Value
+		local kills = ePlayer.leaderstats.Kills
+		kills.Value = kills.Value + 1
+	end
+end)
